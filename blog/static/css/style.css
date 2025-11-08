@@ -15,7 +15,7 @@
 }
 body {
     font-family: 'FormaDJRBanner';
-    background-color: #f7e1d3;
+    background-color: #e7e7e7;
     color: #000;
 }
 /*Home-page styles*/
@@ -28,9 +28,7 @@ body {
     z-index: 0;
 
 }
-.home-page img {
-    display: none;
-}
+
 .home-page h1 a{
     color: inherit;
     text-decoration: none;
@@ -50,6 +48,19 @@ body {
     color: #000; 
 }
 /**/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #1b3a46;
+}
+
+.logo-area img {
+    height: 60px;
+    width: auto;
+}
+
 nav ul {
     list-style: none;
     display: flex;

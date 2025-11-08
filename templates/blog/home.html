@@ -9,23 +9,28 @@
 </head>
 <body class="home-page">
     <header
-        class="site-header"
-        {% if site_config and site_config.header_image %}
-            style="background-image: url('{{ site_config.header_image.url }}'); background-size: cover; background-position: center;"
-        {% else %}
-            style="background-color: {{ site_config.site_background_color|default:'#0052c9' }};"
-        {% endif %}
-    >
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'post_list' %}">Yazılar</a></li>
-            </ul>
-        </nav>
+    class="site-header"
+    {% if site_config and site_config.header_image %}
+        style="background-image: url('{{ site_config.header_image.url }}'); background-size: cover; background-position: center;"
+    {% else %}
+        style="background-color: #e7e7e7;"
+    {% endif %}
+>
+    <nav class="navbar">
+        <div class="logo-area">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'logo.png' %}" alt="Blog Logo" class="blog-logo">
+            </a>
+        </div>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'post_list' %}">Yazılar</a></li>
+        </ul>
+    </nav>
 
-         {% if site_config and site_config.header_image %}
-            <img src="{{ site_config.header_image.url }}" alt="{{ site_config.header_image_alt_text }}" class="sr-only">
-        {% endif %}
+    {% if site_config and site_config.header_image %}
+        <img src="{{ site_config.header_image.url }}" alt="{{ site_config.header_image_alt_text }}" class="sr-only">
+    {% endif %}
     </header>
 
     <main class="posts-grid">
